@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+      routes:
+        # Route to Identity Service
+        - id: identity-service
+          uri: http://identity-service:8081
+          predicates:
+            - Path=/auth/**
+
+        # Route to Resource Service (Protected)
+        - id: resource-service
+          uri: http://resource-service:8082
+          predicates:
+            - Path=/api/resources/**
+          filters:
+            - name: AuthenticationFilter
+
+        # Route to Progress Service (Protected)
+        - id: progress-service
+          uri: http://progress-service:8083
+          predicates:
+            - Path=/api/progress/**
+          filters:
+            - name: AuthenticationFilter
+
+jwt:
+  secret: ${JWT_SECRET}

@@ -1,0 +1,14 @@
+# Dependency folders
+node_modules/
+target/
+bin/
+
+# Environment and IDE settings
+.env
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Docker data (if you mapped volumes locally)
+pgdata/

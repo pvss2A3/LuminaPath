@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "LuminaPath-DB",
+      "Group": "Servers",
+      "Host": "luminapath-db",
+      "Port": 5432,
+      "MaintenanceDB": "luminapath_db",
+      "Username": "lumina_admin",
+      "SSLMode": "prefer"
+    }
+  }
+}

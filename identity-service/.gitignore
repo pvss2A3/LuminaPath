@@ -1,0 +1,11 @@
+# Java specific
+target/
+*.class
+*.jar
+*.war
+
+# IDE specific
+.project
+.classpath
+.settings/
+*.iml
