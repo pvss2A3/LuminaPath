@@ -16,11 +16,13 @@ graph TD
     subgraph "Backend Services"
         GW -->|Port 8081| IS[Identity Service - Auth/Users]
         GW -->|Port 8082| RS[Resource Service - Curriculum]
+        GW -->|Port 8083| PS[Progress Service - User Tracking]
     end
     
     subgraph "Data Layer"
         IS -->|Auth Schema| DB[(PostgreSQL)]
         RS -->|Resource Schema| DB
+        PS -->|Progress Schema| DB
     end
 
     style User fill:#0B0E14,stroke:#0EA5E9,color:#fff
@@ -29,17 +31,19 @@ graph TD
     style DB fill:#151921,stroke:#0EA5E9,color:#fff
     style IS fill:#0284C7,stroke:#fff,color:#fff
     style RS fill:#0284C7,stroke:#fff,color:#fff
+    style PS fill:#0284C7,stroke:#fff,color:#fff
     
 ```
 
 ## 🛠️ Tech Stack
 
-| Layer     | Technologies                                                  |
+| **Layer** | **Technologies**                                              |
 |-----------|---------------------------------------------------------------|
 | Frontend  | React 18, Tailwind CSS, Lucide Icons, Axios                   |
 | Gateway   | Spring Cloud Gateway, YAML Configuration                      |
 | Identity  | Java 17, Spring Boot 3, Spring Security, JWT, Spring Data JPA |
 | Resources | Java 17, Spring Boot 3, Spring Data JPA                       |
+| Progress  | Java 17, Spring Boot 3, Spring Data JPA                       |
 | Database  | PostgreSQL 15 (Multi-schema: auth_schema, resource_schema)    |
 | DevOps    | Docker, Docker Compose, SQL Initialization Scripts            |
 
@@ -62,23 +66,25 @@ graph TD
 - [3] Verify the services:
     - **Frontend UI:** http://localhost:3000
     - **API Gateway:** http://localhost:8080
-    - **PostgreSQL:** http://localhost:5432
+    - **PgAdminL:** http://localhost:5050
 
 ## 📁 Project Modules
-- ***`frontend-ui/`***: A modern dark-themed dashboard. Features include dynamic roadmap rendering based on database categories and an embedded content reader.
+- [***`frontend-ui/`***](./frontend-ui): A modern dark-themed dashboard. Features include dynamic roadmap rendering based on database categories and an embedded content reader.
 
-- ***`gateway-service/`***: The central entry point. Handles CORS, routing, and ensures security by directing traffic to internal microservices via Spring Cloud Gateway.
+- [***`gateway-service/`***](./gateway-service): The central entry point. Handles CORS, routing, and ensures security by directing traffic to internal microservices via Spring Cloud Gateway.
 
-- ***`identity-service/`***: Manages the security layer. Responsible for JWT issuance, user credential validation, and user-specific path preferences.
+- [***`identity-service/`***](./identity-service): Manages the security layer. Responsible for JWT issuance, user credential validation, and user-specific path preferences.
 
-- ***`resource-service/`***: The content engine. Delivers curriculum data and categorizes resources into navigable learning phases.
+- [***`resource-service/`***](./resource-service): The content engine. Delivers curriculum data and categorizes resources into navigable learning phases.
 
-- ***`init-db/`***: Contains SQL initialization scripts that automatically set up schemas and seed the curricula (Java & DevOps) on the first launch.
+- [***`progress-service/`***](./progress-service): Tracks individual user milestones, completed lessons, and roadmap advancement.
+
+- [***`init-db/`***](./init-db): Contains SQL initialization scripts that automatically set up schemas and seed the curricula (Java & DevOps) on the first launch.
 
 ## 🔒 Security & Performance
 - **JWT Authentication:** Stateless authentication ensures scalable security across the microservices.
 
-- **Native SQL Optimization:** Custom native queries in the persistence layer minimize overhead for cross-schema data retrieval.
+- **Schema Isolation:** Dedicated PostgreSQL schemas for Auth, Resources, and Progress to ensure data integrity.
 
 - **Containerization:** Every service is isolated within Docker, ensuring consistent environments from development to production.
 

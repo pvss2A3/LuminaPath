@@ -35,11 +35,11 @@ graph TD
 - **Configuration:** YAML-based routing definitions
 
 ## 🔗 Route Definitions
-| Predicate (Path)	 | Destination	                 | Service          |
-|-------------------|------------------------------|------------------|
-| /auth/**	         | http://identity-service:8081 | Identity Service |
-| /api/user/**	     | http://identity-service:8081 | Identity Service |
-| /api/resources/** | http://resource-service:8082 | Resource Service |
+| **Predicate (Path)**	 | **Destination**	             | **Service**      |
+|-----------------------|------------------------------|------------------|
+| /auth/**	             | http://identity-service:8081 | Identity Service |
+| /api/user/**	         | http://identity-service:8081 | Identity Service |
+| /api/resources/**     | http://resource-service:8082 | Resource Service |
 
 ## ⚙️ Configuration Snippet
 The routing logic is defined in the *`src/main/resources/application.yml`* file:

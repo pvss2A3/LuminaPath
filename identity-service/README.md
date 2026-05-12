@@ -32,21 +32,21 @@ graph LR
 - **Database:** PostgreSQL
 
 ## 📂 Module Structure
-- ***`***controller/`***: REST endpoints for /auth and /api/user. 
-- ***`***model/`***: JPA entities, specifically the UserCredential entity. 
-- ***`***repository/`***: Data access layer using custom native queries for performance. 
-- ***`***service/`***: Business logic for token generation and credential validation. 
-- ***`dto/`***: Data Transfer Objects for clean API request/response handling.
+- [***`controller/`***](./identity-service/src/main/java/com/luminapath/identity/controller): REST endpoints for /auth and /api/user. 
+- [***`model/`***](./identity-service/src/main/java/com/luminapath/identity/model): JPA entities, specifically the UserCredential entity. 
+- [***`repository/`***](./identity-service/src/main/java/com/luminapath/identity/repository): Data access layer using custom native queries for performance. 
+- [***`service/`***](./identity-service/src/main/java/com/luminapath/identity/service): Business logic for token generation and credential validation. 
+- [***`config/`***](./identity-service/src/main/java/com/luminapath/identity/config): Configuration for Authorization handling.
 
 ## 🔗 API Endpoints
 
-| Method | Endpoint              | Description                       |
-|--------|-----------------------|-----------------------------------|
-| POST   | /auth/register        | Create a new student account      |
-| POST   | /auth/token           | Authenticate and receive a JWT    |
-| GET    | /auth/validate        | Verify if a token is still active |
-| POST   | /api/user/preferences | Save selected learning paths      |
-| GET    | /api/user/preferences | Retrieve user-specific paths      |
+| **Method** | **Endpoint**          | **Description**                   |
+|------------|-----------------------|-----------------------------------|
+| POST       | /auth/register        | Create a new student account      |
+| POST       | /auth/token           | Authenticate and receive a JWT    |
+| GET        | /auth/validate        | Verify if a token is still active |
+| POST       | /api/user/preferences | Save selected learning paths      |
+| GET        | /api/user/preferences | Retrieve user-specific paths      |
 
 ## ⚙️ Configuration
 The service is configured to run on port `8081` within the Docker network. 

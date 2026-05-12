@@ -33,16 +33,15 @@ graph LR
 - **Mapping:** Hibernate
 
 ## 📂 Module Structure
-- *`controller/`*: Exposes the *`/api/resources`* endpoint for the dashboard. 
-- *`model/`*: Contains the *`Resource`* entity representing a single learning unit. 
-- *`repository/`*: Handles database interactions within the *`resource_schema`*. 
-- *`dto/`*: Ensures API responses only contain necessary frontend metadata.
+- [*`controller/`*](./resource-service/src/main/java/com/luminapath/resource/controller): Exposes the *`/api/resources`* endpoint for the dashboard. 
+- [*`model/`*](./resource-service/src/main/java/com/luminapath/resource/model): Contains the *`Resource`* entity representing a single learning unit. 
+- [*`repository/`*](./resource-service/src/main/java/com/luminapath/resource/repository): Handles database interactions within the *`resource_schema`*.
 
 ## 🔗 API Endpoints
-| Method | Endpoint             | Description                             |
-|--------|----------------------|-----------------------------------------|
-| GET    | /api/resources       | Fetch all available learning resources  |
-| GET    | /api/resources/{id}  | Fetch specific resource details         |
+| **Method** | **Endpoint**        | **Description**                        |
+|------------|---------------------|----------------------------------------|
+| GET        | /api/resources      | Fetch all available learning resources |
+| GET        | /api/resources/{id} | Fetch specific resource details        |
 
 ## ⚙️ Configuration
 The service is configured to run on port *`8082`*. 
