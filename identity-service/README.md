@@ -32,11 +32,11 @@ graph LR
 - **Database:** PostgreSQL
 
 ## 📂 Module Structure
-- [***`controller/`***](./identity-service/src/main/java/com/luminapath/identity/controller): REST endpoints for /auth and /api/user. 
-- [***`model/`***](./identity-service/src/main/java/com/luminapath/identity/model): JPA entities, specifically the UserCredential entity. 
-- [***`repository/`***](./identity-service/src/main/java/com/luminapath/identity/repository): Data access layer using custom native queries for performance. 
-- [***`service/`***](./identity-service/src/main/java/com/luminapath/identity/service): Business logic for token generation and credential validation. 
-- [***`config/`***](./identity-service/src/main/java/com/luminapath/identity/config): Configuration for Authorization handling.
+- [***`controller/`***](./src/main/java/com/luminapath/identity/controller): REST endpoints for /auth and /api/user. 
+- [***`model/`***](./src/main/java/com/luminapath/identity/model): JPA entities, specifically the UserCredential entity. 
+- [***`repository/`***](./src/main/java/com/luminapath/identity/repository): Data access layer using custom native queries for performance. 
+- [***`service/`***](./src/main/java/com/luminapath/identity/service): Business logic for token generation and credential validation. 
+- [***`config/`***](./src/main/java/com/luminapath/identity/config): Configuration for Authorization handling.
 
 ## 🔗 API Endpoints
 

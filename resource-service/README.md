@@ -33,9 +33,9 @@ graph LR
 - **Mapping:** Hibernate
 
 ## 📂 Module Structure
-- [*`controller/`*](./resource-service/src/main/java/com/luminapath/resource/controller): Exposes the *`/api/resources`* endpoint for the dashboard. 
-- [*`model/`*](./resource-service/src/main/java/com/luminapath/resource/model): Contains the *`Resource`* entity representing a single learning unit. 
-- [*`repository/`*](./resource-service/src/main/java/com/luminapath/resource/repository): Handles database interactions within the *`resource_schema`*.
+- [*`controller/`*](./src/main/java/com/luminapath/resource/controller): Exposes the *`/api/resources`* endpoint for the dashboard. 
+- [*`model/`*](./src/main/java/com/luminapath/resource/model): Contains the *`Resource`* entity representing a single learning unit. 
+- [*`repository/`*](./src/main/java/com/luminapath/resource/repository): Handles database interactions within the *`resource_schema`*.
 
 ## 🔗 API Endpoints
 | **Method** | **Endpoint**        | **Description**                        |

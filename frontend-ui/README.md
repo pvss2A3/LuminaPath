@@ -35,10 +35,10 @@ graph TD
 - **State Management:** React Hooks (useState, useEffect)
 
 ## 📂 Project Structure
-- [*`src/api/`*](./frontend-ui/src/api): Centralized Axios configuration and API helper functions. 
-- [*`src/components/`*](./frontend-ui/src/components): Reusable UI components (Login, Resource Cards). 
-- [*`src/App.jsx`*](./frontend-ui/src/App.jsx): The main application controller handling routing and global state. 
-- [*`tailwind.config.js`*](./frontend-ui/tailwind.config.js): Custom theme configuration for the "Lumina" dark-mode aesthetic.
+- [*`src/api/`*](./src/api): Centralized Axios configuration and API helper functions. 
+- [*`src/components/`*](./src/components): Reusable UI components (Login, Resource Cards). 
+- [*`src/App.jsx`*](./src/App.jsx): The main application controller handling routing and global state. 
+- [*`tailwind.config.js`*](./tailwind.config.js): Custom theme configuration for the "Lumina" dark-mode aesthetic.
 
 ## 🚀 Development Setup
 #### Prerequisites

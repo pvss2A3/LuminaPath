@@ -34,10 +34,10 @@ graph LR
 - **Mapping**: Hibernate with custom progress_schema mapping
 
 ## 📂 Module Structure
-- [***`controller/`***](./progress-service/src/main/java/com/luminapath/progress/controller): Endpoints for updating and fetching user learning stats. 
-- [***`model/`***](./progress-service/src/main/java/com/luminapath/progress/model): Contains the UserProgress entity (mapping User IDs to Resource IDs). 
-- [***`repository/`***](./progress-service/src/main/java/com/luminapath/progress/repository): Handles persistence logic using optimized Spring Data JPA interfaces. 
-- [***`service/`***](./progress-service/src/main/java/com/luminapath/progress/service): Contains business logic for calculating completion percentages and validating milestones.
+- [***`controller/`***](./src/main/java/com/luminapath/progress/controller): Endpoints for updating and fetching user learning stats. 
+- [***`model/`***](./src/main/java/com/luminapath/progress/model): Contains the UserProgress entity (mapping User IDs to Resource IDs). 
+- [***`repository/`***](./src/main/java/com/luminapath/progress/repository): Handles persistence logic using optimized Spring Data JPA interfaces. 
+- [***`service/`***](./src/main/java/com/luminapath/progress/service): Contains business logic for calculating completion percentages and validating milestones.
 
 ## 🔗 API Endpoints
 | **Method** | **Endpoint**                        | **Description**                               |
